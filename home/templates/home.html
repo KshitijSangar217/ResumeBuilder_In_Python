@@ -1,0 +1,108 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={% static 'css/home.css' %}>
+    <title>Resume Builder</title>
+</head>
+<body>
+</body>
+<div class="container-main">
+    <div class="container-content">
+        <h1>Resume Builder</h1>
+        <br><br>
+        <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+
+          <div class="form-group">
+              <br><br>
+             <h2>Name</h2><br>
+              <div class="form-row">
+                  <div class="form-group col-lg-6">
+                     <input type="text" name="name" class="form-control" id="name"  placeholder="Your name ">
+                  </div>
+              </div>
+          </div>
+            <br><br>
+          <h2>Contact Info:</h2><br>
+          <div class="form-row">
+              <div class="col">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="small" class="form-text text-muted"> You will get your resume on this email ID </small>
+              </div>
+
+              <div class="col">
+                <label for="phone">Phone</label>
+                <input type="text" name="number" class="form-control" id="phone" placeholder="Phone No.">
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+              </div>
+
+              <div class="col">
+                <label for="linkedin">LinkedIn Profile</label>
+                <input type="text" name="linkedin" class="form-control" id="linkedin" placeholder="Enter link to your profile">
+              </div>
+          </div>
+
+          <br><br><h2>Summary</h2><br>
+          <div class="form-group">
+              <textarea   name="summary" class="form-control" id="summary" rows="3" placeholder="Summary"></textarea>
+          </div>
+
+          <br><br><h2>Education</h2>
+            {% for count in "1234" %}
+              <br>
+              <div class="form-row">
+                  <div class="col">
+                    <label for="school">School/university</label>
+                    <input type="text" name= "school {{count}}" class="form-control" id="school" placeholder="School/University name">
+                  </div>
+
+                  <div class="col">
+                    <label for="year">Year</label>
+                    <input type="text" name="year {{count}}" class="form-control" id="year" placeholder="Year of passing">
+                  </div>
+                  <div class="col">
+                    <label for="marks">Marks(optional)</label>
+                    <input type="text" name="marks {{count}}" class="form-control" id="marks" placeholder="Your passing marks">
+                  </div>
+              </div>
+            {% endfor %}
+
+          <br><br><h2>Skills</h2><br>
+          <div class="form-group">
+              <textarea  name="skills" class="form-control" id="skills" rows="3" placeholder="Enter each skill with Comma ',' separated"></textarea>
+          </div>
+
+          <br><br><h2>Awards</h2><br>
+          <div class="form-group">
+              <textarea  name="awards" class="form-control" id="awards" rows="3" placeholder="Before each description add '*' "></textarea>
+          </div>
+
+          <br><br><h2>Experience/Projects</h2><br>
+          <div class="form-group" id="exp_text">
+              <textarea  name="experience" class="form-control" id="experience" rows="8" placeholder="Use '#' before the Title and '*' before it's description."></textarea>
+          </div>
+
+
+
+          <br><br><button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        Designed & Developed By :  Kshitij Sangar
+        <br><br>
+    </div>
+</div>
+
+</html>
