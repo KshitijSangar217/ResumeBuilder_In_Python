@@ -1,0 +1,95 @@
+import smtplib
+from email.message import EmailMessage
+from sys_rar import my_pd
+import imghdr
+from PIL import Image, ImageDraw, ImageFont
+import textwrap
+
+#  Variable Initialization
+gmail_id = "kshitijsangar@gmail.com"
+gmail_pd = my_pd
+gmail_subject = 'Resume from Kshitij Sangar'
+gmail_content ="""
+Hello, 
+
+Here's your resume
+
+Regards,
+Kshitij Sangar
+"""
+
+template_loc = "ResumeSite.jpg"
+fontcolor = (0,0,0)
+enduser_fname = 'Resume.pdf'
+
+
+
+# Making the Resume.
+cft = Image.open(template_loc)  # Cft = Certificate
+fnt_type_title = ImageFont.truetype('arial.ttf', 16)  #----------------------------
+fnt_type_descrip = ImageFont.truetype('arial.ttf', 16)
+
+# Variables to be displayed on the Resume.
+a = 'I T H'
+
+summary= """
+The Nintendo Entertainment System (NES) is an 8-bit third-generation home -selling gaming consoles of its time, the NES helped revitalize the US video game industry following the video game crash of 1983.[11] With the NES, Nintendo introduced a now-standard business model of licensing third-party developers, authorizing them to produce and distribute games for Nintendo's platform.[12] It had been preceded by Nintendo's first home video game console.
+"""
+
+
+path = "arial.ttf"
+size = 15
+font = ImageFont.truetype(path,size)
+
+
+draw = ImageDraw.Draw(cft)
+lines = textwrap.wrap(summary,20)
+x = 540
+y = 214
+print("Before y = ", y)
+
+for line in lines:
+    w, h = font.getsize(line)
+    draw.text(xy=(x, y), text=line, fill=fontcolor, font=fnt_type_descrip)
+    y += h
+print("After y = ", y)
+#draw.text(xy=(895, 1523), text='Sr.no:' + str(df1['SRNO'][i]), fill=srno_fontcolor, font=fnt_type_srno, stroke_width=1)
+
+cft.show()
+cft.save('Resumedemo.jpg')
+
+
+
+
+
+"""
+#------------------ Mailing Part ---------------------------------
+
+
+# Email Setup
+s = smtplib.SMTP("smtp.gmail.com", 587)
+s.starttls()  # Traffic encryption
+s.login(gmail_id, gmail_pd)
+
+msg = EmailMessage()
+msg['Subject'] = gmail_subject
+msg['From'] = gmail_id
+msg['To'] = "kshitijsangar@gmail.com"
+gmail_content = gmail_content.replace("<name>", df1['NAME'][i])
+msg.set_content(gmail_content)
+
+#Attaching the Poster
+f = open('resume/ <name>', 'rb')
+fdata = f.read()
+#fname = 'images/' + CertificateFileName
+fname = enduser_fname
+
+file_type = imghdr.what(f.name)
+msg.add_attachment(fdata, maintype='application', subtype='octet-stream', filename=fname)
+
+s.send_message(msg)
+print("--> Email sent : Sent")
+s.quit()
+print("\n Certificates sent...")
+
+"""

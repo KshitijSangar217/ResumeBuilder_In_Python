@@ -1,0 +1,50 @@
+
+# CONTACT INFO.
+Kshitij Sangar
+kshitijsangar@gmail.com
+8669042081
+B403, Hind Paradise, Tarabai park, Kolhapur.
+linkedin/in/kshitijsangar
+
+# SUMMARY
+Banged 1st prize in Fy project Based learning Competition as well as 3rd prize in PIONEER event which is a national level event. Successfully built AutoBulkMailing system, AutoBulkCertification system , Resume Builder , snake game, XO game, Lift management system program  in python and c language.
+
+Highly aimed, passionate, smart working  2nd year Computer Science Engineering student. I am a desperate python programmer with lots of experience in interesting python projects.
+
+
+# EDUCATION
+New Model English School    2016    90.80%
+Swami Vivekanand College    2019   85.4%
+
+# SKILLS
+Python, C, Cpp, Leadership, Team Player
+
+#AWARDS
+*1st prize in PBL competition for JET ENGINE
+*3rd prize in Irenew for JET ENGINE
+*Represented our college at district level in eYantra competition
+
+
+Experience
+# AutoBulkmailing System
+* Building this project was fun. Here in this project I grabbed the list of participants from the excel sheet and send them custom html embedded emails.
+
+# AutoBulkCertification System
+* This project taught me how to manipulate images. In this project I grabbed the list of participants from the excel sheet, then build custom certificates sent them on the participant's email ID.
+
+# Resume Builder
+* This is web app developed in django. This web app takes all the necessary data for the resume and then sends the resume to the user on his/her email ID.
+
+# Manager / Volunteer
+* Worked as a volunteer as well as a manager in ABHIGYAN  (an International Student Conference )for two consecutive years 
+ 2019/20
+
+# Volunteer 
+* Volunteered in my departmental club ACSES.
+
+
+
+
+
+
+
